@@ -15,9 +15,9 @@ new MBTiles("/root/repos/fans_club/mbTiles/0.mbtiles", (err, mbtiles) => {
       try {
         const { stdout } = await execa(`tippecanoe-decode ${tile} 0 0 0`);
         // const buf = geobuf.decode(new P(tile));
-        console.log(stdout);
+        console.log("stdout", stdout);
       } catch (error) {
-        console.log(err);
+        console.log(error);
       }
     }
   });
