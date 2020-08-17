@@ -12,9 +12,13 @@ new MBTiles("/root/repos/fans_club/mbTiles/0.mbtiles", (err, mbtiles) => {
       console.log(err);
     } else {
       console.log(tile);
-      const { stdout } = await execa(`tippecanoe-decode ${tile} 0 0 0`);
-      // const buf = geobuf.decode(new P(tile));
-      console.log(stdout);
+      try {
+        const { stdout } = await execa(`tippecanoe-decode ${tile} 0 0 0`);
+        // const buf = geobuf.decode(new P(tile));
+        console.log(stdout);
+      } catch (error) {
+        console.log(err);
+      }
     }
   });
 });
