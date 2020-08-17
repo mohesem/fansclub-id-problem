@@ -3,7 +3,7 @@ import geobuf from "geobuf";
 import execa from "execa";
 const MBTiles = require("@mapbox/mbtiles");
 
-new MBTiles("/root/repos/fans_club/mbTiles/0.mbtiles", (err, mbtiles) => {
+new MBTiles("/root/repos/fans_club/mbTiles/0.mbtiles", async (err, mbtiles) => {
   mbtiles.getInfo(function (err, info) {
     console.log(info); // info
   });
