@@ -1,0 +1,25 @@
+{
+  "name": "id_problem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "babel-node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mapbox/mbtiles": "^0.12.1",
+    "execa": "^4.0.3",
+    "geobuf": "^3.0.2",
+    "mongoose": "^5.10.0",
+    "node-fetch": "^2.6.0",
+    "pbf": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3"
+  }
+}
