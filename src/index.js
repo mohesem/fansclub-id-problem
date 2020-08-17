@@ -6,7 +6,7 @@ const MBTiles = require("@mapbox/mbtiles");
 (async () => {
   try {
     const { stdout } = await execa(
-      `tippecanoe-decode root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`
+      `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`
     );
     console.log("stdout", stdout);
   } catch (error) {
