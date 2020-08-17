@@ -18,7 +18,7 @@ import geobuf from "geobuf";
   try {
     const res = await fetch("https://www.fansclub.app/api/v1/GET/tiles/0/0/0");
     // const json = await res.body.json();
-    console.log(res.body);
+    // console.log(res.body);
     // console.log(Object.keys(res));
     // console.log(res.body._readableState.buffer);
     // console.log(res.size);

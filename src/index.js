@@ -1,4 +1,7 @@
+const P = require("pbf");
+import geobuf from "geobuf";
 const MBTiles = require("@mapbox/mbtiles");
+
 new MBTiles("/root/repos/fans_club/mbTiles/0.mbtiles", (err, mbtiles) => {
   mbtiles.getInfo(function (err, info) {
     console.log(info); // info
@@ -10,6 +13,8 @@ new MBTiles("/root/repos/fans_club/mbTiles/0.mbtiles", (err, mbtiles) => {
     }
     {
       console.log(tile);
+      var buf = geobuf.decode(new P(tile));
+      console.log(buf);
     }
     //   return cb(200, header, tile);
   });
