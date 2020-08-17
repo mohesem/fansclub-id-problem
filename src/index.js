@@ -1,5 +1,6 @@
 const P = require("pbf");
 import geobuf from "geobuf";
+import execa from "execa";
 const MBTiles = require("@mapbox/mbtiles");
 
 new MBTiles("/root/repos/fans_club/mbTiles/0.mbtiles", (err, mbtiles) => {
@@ -9,13 +10,12 @@ new MBTiles("/root/repos/fans_club/mbTiles/0.mbtiles", (err, mbtiles) => {
   mbtiles.getTile(0, 0, 0, (err, tile) => {
     if (err) {
       console.log(err);
-      // return cb(404, headerErr, `Tile rendering error: ${err}\n`);
     }
     {
       console.log(tile);
-      var buf = geobuf.decode(new P(tile));
-      console.log(buf);
+      const {stdout} = await execa(`tippecanoe-decode ${tile} 0 0 0`)
+      // const buf = geobuf.decode(new P(tile));
+      console.log(stdout);
     }
-    //   return cb(200, header, tile);
   });
 });
