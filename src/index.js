@@ -2,13 +2,22 @@ const P = require("pbf");
 import geobuf from "geobuf";
 import execa from "execa";
 const MBTiles = require("@mapbox/mbtiles");
+const { exec } = require("child_process");
 
 (async () => {
   try {
-    const { stdout } = await execa(
-      `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`
+    // const { stdout } = await execa(
+    //   `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`
+    // );
+    // console.log("stdout", stdout);
+    exec(
+      `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`,
+      (error, stdout, stderr) => {
+        if (error) throw error;
+        console.log(stdout);
+        console.log(stderr);
+      }
     );
-    console.log("stdout", stdout);
   } catch (error) {
     console.log(error);
   }
