@@ -14,7 +14,7 @@ const { exec } = require("child_process");
       `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`,
       (error, stdout, stderr) => {
         if (error) console.log(error);
-        console.log(stdout.length);
+        console.log(Object.keys(stdout));
         console.log(stderr);
       }
     );
