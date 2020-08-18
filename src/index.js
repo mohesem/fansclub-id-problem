@@ -4,7 +4,7 @@ const { exec } = require("child_process");
   try {
     exec(
       `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`,
-      { maxBuffer: 1024 * 1000 },
+      { maxBuffer: 1024 * 10000 },
       (error, stdout, stderr) => {
         if (error) console.log(error);
         console.log(Object.keys(stdout));
