@@ -8,7 +8,7 @@ const { exec } = require("child_process");
       async (error, stdout, stderr) => {
         if (error) console.log(error);
         const obj = await JSON.parse(stdout);
-        console.log(obj.featurese.length);
+        console.log(obj.features.length);
         // console.log(Object.keys(obj));
         console.log(stderr);
       }
