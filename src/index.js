@@ -2,6 +2,7 @@ const { exec } = require("child_process");
 import mongoose from "mongoose";
 
 mongoose.connection.on("connected", async () => {
+  console.log("connected to database");
   try {
     exec(
       `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`,
