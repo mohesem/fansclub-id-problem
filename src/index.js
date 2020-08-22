@@ -32,6 +32,7 @@ const check = (z, x, y) => {
             name1: el.NAME_1,
             name2: el.NAME_2,
           };
+          console.log(query);
           // if (el.NAME_0) query.name0 = el.NAME_0;
           const res = await Geo.findOne(query).exec();
           // console.log(res);
