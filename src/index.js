@@ -1,6 +1,7 @@
 const { exec } = require("child_process");
 import mongoose from "mongoose";
 
+console.log("start");
 mongoose.connection.on("connected", async () => {
   console.log("connected to database");
   try {
