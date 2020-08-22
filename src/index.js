@@ -21,6 +21,7 @@ mongoose.connection.on("connected", async () => {
   try {
     (async function loop() {
       if (all <= countX * countY) {
+        return false;
         console.log("done");
       }
       // if (countX <= side) {
@@ -37,6 +38,7 @@ mongoose.connection.on("connected", async () => {
         countY === 0;
         countX += 1;
       }
+      loop();
       console.log([countX, countY]);
     })();
     // exec(
