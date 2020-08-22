@@ -20,11 +20,12 @@ mongoose.connection.on("connected", async () => {
         const obj = await JSON.parse(stdout);
         console.log(obj.features[0].features.length);
         obj.features[0].features.forEach(async (el) => {
-          // console.log(el);
+          console.log(el);
           // const query = {}
           // if (el.NAME_0) query.name0 = el.NAME_0;
           const res = await Geo.findOne({ name0: el.properties.NAME_0 }).exec();
-          console.log(res);
+          // console.log(res);
+          console.log(res.fid);
         });
         console.log(stderr);
       }
