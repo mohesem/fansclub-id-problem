@@ -35,7 +35,8 @@ const check = (z, x, y) => {
           if (res.fid !== el.id) console.log("-----------------");
 
           if (i === obj.features[0].features.length - 1) {
-            console.log("done");
+            // console.log("done");
+            resolve();
           }
         });
         console.log(stderr);
