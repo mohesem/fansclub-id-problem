@@ -1,6 +1,7 @@
 const { exec } = require("child_process");
+import mongoose from "mongoose";
 
-(async () => {
+mongoose.connection.on("connected", async () => {
   try {
     exec(
       `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`,
@@ -9,11 +10,13 @@ const { exec } = require("child_process");
         if (error) console.log(error);
         const obj = await JSON.parse(stdout);
         console.log(obj.features[0].features.length);
-        // console.log(Object.keys(obj));
+        obj.feature[0].features.forEach((element) => {
+          console.log(element);
+        });
         console.log(stderr);
       }
     );
   } catch (error) {
     console.log(error);
   }
-})();
+});
