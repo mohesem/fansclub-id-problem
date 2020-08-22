@@ -37,7 +37,7 @@ mongoose.connection.on("connected", async () => {
         countY === 0;
         countX += 1;
       }
-      console.log([x, y]);
+      console.log([countX, countY]);
     })();
     // exec(
     //   `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`,
