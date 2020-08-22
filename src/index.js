@@ -28,9 +28,9 @@ const check = (z, x, y) => {
         obj.features[0].features.forEach(async (el, i) => {
           // console.log(el);
           const query = {
-            name0: el.NAME_0,
-            name1: el.NAME_1,
-            name2: el.NAME_2,
+            name0: el.properties.NAME_0,
+            name1: el.properties.NAME_1,
+            name2: el.properties.NAME_2,
           };
           console.log(query);
           // if (el.NAME_0) query.name0 = el.NAME_0;
