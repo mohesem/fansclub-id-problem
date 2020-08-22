@@ -25,7 +25,7 @@ mongoose.connection.on("connected", async () => {
           // if (el.NAME_0) query.name0 = el.NAME_0;
           const res = await Geo.findOne({ name0: el.properties.NAME_0 }).exec();
           // console.log(res);
-          console.log(res.fid);
+          console.log(res.fid, el.id);
         });
         console.log(stderr);
       }
