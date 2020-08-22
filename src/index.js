@@ -1,5 +1,6 @@
 const { exec } = require("child_process");
 import mongoose from "mongoose";
+import Geo from "./models/geoModel";
 
 mongoose.connect("mongodb://localhost:27017/fansclub", {
   useUnifiedTopology: true,
@@ -18,8 +19,11 @@ mongoose.connection.on("connected", async () => {
         if (error) console.log(error);
         const obj = await JSON.parse(stdout);
         console.log(obj.features[0].features.length);
-        obj.features[0].features.forEach((element) => {
-          console.log(element);
+        obj.features[0].features.forEach((el) => {
+          const query = {};
+          if (el.NAME_0) query.name0 = el.NAME_0;
+        const res = await   Geo.findOne(query).exec();
+        console.log(res)
         });
         console.log(stderr);
       }
