@@ -18,7 +18,7 @@ mongoose.connection.on("connected", async () => {
         if (error) console.log(error);
         const obj = await JSON.parse(stdout);
         console.log(obj.features[0].features.length);
-        obj.feature[0].features.forEach((element) => {
+        obj.features[0].features.forEach((element) => {
           console.log(element);
         });
         console.log(stderr);
