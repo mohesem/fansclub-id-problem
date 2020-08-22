@@ -8,7 +8,7 @@ mongoose.connect("mongodb://localhost:27017/fansclub", {
   useCreateIndex: true,
 });
 
-const z = 1;
+const z = 2;
 const side = z * 2;
 const all = side * side;
 // const start = [0, 0];
