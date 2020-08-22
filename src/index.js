@@ -9,17 +9,17 @@ mongoose.connect("mongodb://localhost:27017/fansclub", {
   useCreateIndex: true,
 });
 
-const z = 2;
-const side = z * 2;
+const zoom = 2;
+const side = zoom * 2;
 // const all = side * side;
 // const start = [0, 0];
 let countX = 0;
 let countY = 0;
 
-const check = () => {
+const check = (z, x, y) => {
   return new Promise((resolve, reject) => {
     exec(
-      `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 0 0 0`,
+      `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles ${z} ${x} ${y}`,
       { maxBuffer: 1024 * 10000 },
       async (error, stdout, stderr) => {
         if (error) console.log(error);
@@ -53,6 +53,7 @@ mongoose.connection.on("connected", async () => {
         console.log("done");
         return false;
       }
+      await check(zoom, countX, countY);
       if (countY < side) {
         countY += 1;
       }
@@ -60,7 +61,7 @@ mongoose.connection.on("connected", async () => {
         countY = 0;
         countX += 1;
       }
-      await check;
+      // await check();
       loop();
     })();
   } catch (error) {
