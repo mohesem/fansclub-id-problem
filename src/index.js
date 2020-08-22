@@ -27,9 +27,13 @@ const check = (z, x, y) => {
         console.log(obj.features[0].features.length);
         obj.features[0].features.forEach(async (el, i) => {
           // console.log(el);
-          // const query = {}
+          const query = {
+            name0: el.NAME_0,
+            name1: el.NAME_1,
+            name2: el.NAME_2,
+          };
           // if (el.NAME_0) query.name0 = el.NAME_0;
-          const res = await Geo.findOne({ name0: el.properties.NAME_0 }).exec();
+          const res = await Geo.findOne(query).exec();
           // console.log(res);
           console.log(res.fid, el.id);
           if (res.fid !== el.id) console.log("-----------------");
