@@ -83,7 +83,7 @@ exec(
     const obj = await JSON.parse(stdout);
     console.log(obj.features[0].features.length);
     obj.features[0].features.forEach(async (el, i) => {
-      // console.log(el);
+      console.log(el);
       const query = {
         name0: el.properties.NAME_0,
         name1: el.properties.NAME_1,
