@@ -20,7 +20,7 @@ mongoose.connection.on("connected", async () => {
   console.log("connected to database");
   try {
     (async function loop() {
-      if (all > countX * countY) {
+      if (all <= countX * countY) {
         console.log("done");
       }
       // if (countX <= side) {
