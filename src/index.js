@@ -76,7 +76,7 @@ let countY = 0;
 // });
 
 exec(
-  `tippecanoe-decode /root/repos/fans_club/mbTiles/0.mbtiles 5 20 12`,
+  `tippecanoe-decode /root/repos/fans_club/mbTiles/1.mbtiles 5 20 12`,
   { maxBuffer: 1024 * 10000 },
   async (error, stdout, stderr) => {
     if (error) console.log(error);
